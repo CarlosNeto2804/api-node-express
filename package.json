@@ -1,0 +1,32 @@
+{
+  "name": "api-node-express",
+  "version": "1.0.0",
+  "description": "Modelo de API em Node com Express",
+  "main": "App.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "./node_modules/.bin/nodemon ./server/App.js",
+    "start": "node ./server/App.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarlosNeto2804/api-node-express.git"
+  },
+  "author": "CarlosNeto2804",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CarlosNeto2804/api-node-express/issues"
+  },
+  "homepage": "https://github.com/CarlosNeto2804/api-node-express#readme",
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "https": "^1.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.7.10",
+    "nodemon": "^1.19.4",
+    "uuid": "^3.3.3"
+  }
+}
