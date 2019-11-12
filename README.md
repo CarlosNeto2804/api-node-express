@@ -5,16 +5,16 @@
 npm install 
 ```
 ## Configurar variáveis de ambiente
+### No arquivo .env informar os seguintes valores
 
 ### Banco de Dados
 ```
-No arquivo .env informar os seguintes valores
-
-Obs: Exemplo para um banco hospedado no mlab
 DB_NAME=my-database
 DB_URL=ds000000.mlab.com:11111
 DB_USERNAME=username_database
 DB_PASSWORD=password_database
+
+Obs: Exemplo para um banco hospedado no mlab
 ```
 ### Chaves para token
 ```
