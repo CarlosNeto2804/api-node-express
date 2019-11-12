@@ -8,7 +8,7 @@ class Server {
   constructor() {
     this.app = new Express();
     this.port = this.normalizePort(global.config.port || process.env.PORT);
-    this.debug = debug("perseuescola:server");
+    this.debug = debug("api:server");
     this.server = https.createServer(this.app);
     this.server.on("error", this.onError);
     this.server.on("listening", this.onListening.bind(this));
