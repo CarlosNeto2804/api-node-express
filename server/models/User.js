@@ -1,6 +1,6 @@
-"use strict";
-const mongoose = require("mongoose");
-const uuid = require("uuid/v1");
+'use strict';
+const mongoose = require('mongoose');
+const uuid = require('uuid/v1');
 
 class User extends mongoose.Schema {
   constructor() {
@@ -9,30 +9,29 @@ class User extends mongoose.Schema {
         type: String,
         required: true,
         unique: true,
-        default: uuid
+        default: uuid,
       },
       name: {
         type: String,
-        required: true
+        required: true,
       },
       email: {
         type: String,
         required: true,
         trim: true,
         unique: true,
-        match: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
       },
       picture: {
         type: String,
-        required: false
+        required: false,
       },
       active: {
         type: Boolean,
-        default: true
+        default: true,
       },
     });
 
-    mongoose.model("User", this);
+    mongoose.model('User', this);
   }
 }
 module.exports = User;

@@ -28,5 +28,26 @@
     "mongoose": "^5.7.10",
     "nodemon": "^1.19.4",
     "uuid": "^3.3.3"
+  },
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.4.3",
+    "prettier": "^1.19.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "engines": {
+    "node": "10.15.3",
+    "npm": "6.11.2"
+  },
+  "lint-staged": {
+    "server/**/*.js": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }

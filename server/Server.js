@@ -1,17 +1,18 @@
-"use strict";
+/* eslint-disable indent */
+'use strict';
 
-const debug = require("debug");
-const https = require("https");
-const Express = require("express");
+const debug = require('debug');
+const https = require('https');
+const Express = require('express');
 
 class Server {
   constructor() {
     this.app = new Express();
     this.port = this.normalizePort(global.config.port || process.env.PORT);
-    this.debug = debug("api:server");
+    this.debug = debug('api:server');
     this.server = https.createServer(this.app);
-    this.server.on("error", this.onError);
-    this.server.on("listening", this.onListening.bind(this));
+    this.server.on('error', this.onError);
+    this.server.on('listening', this.onListening.bind(this));
 
     return this.app;
   }
@@ -31,21 +32,21 @@ class Server {
   }
 
   onError(error) {
-    if (error.syscall !== "listen") {
+    if (error.syscall !== 'listen') {
       throw error;
     }
 
     let bind =
-      typeof this.port === "string" ? "Pipe " + this.port : "Port" + this.port;
+      typeof this.port === 'string' ? 'Pipe ' + this.port : 'Port' + this.port;
 
     switch (error.code) {
-      case "EACCES":
-        console.error(bind + " requires elevated privileges");
+      case 'EACCES':
+        console.error(bind + ' requires elevated privileges');
         process.exit(1);
         break;
 
-      case "EADDRINUSE":
-        console.error(bind + " is already in use");
+      case 'EADDRINUSE':
+        console.error(bind + ' is already in use');
         process.exit(1);
         break;
 
@@ -56,9 +57,9 @@ class Server {
 
   onListening() {
     let addr = this.server.address();
-    let bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
+    let bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
 
-    debug("Listening on " + bind);
+    debug('Listening on ' + bind);
   }
 }
 
