@@ -1,8 +1,8 @@
 'use strict';
-const mongoose = require('mongoose');
+const MOONGOOSE = require('mongoose');
 const uuid = require('uuid/v1');
 
-class User extends mongoose.Schema {
+class User extends MOONGOOSE.Schema {
   constructor() {
     super({
       code: {
@@ -31,7 +31,7 @@ class User extends mongoose.Schema {
       },
     });
 
-    mongoose.model('User', this);
+    MOONGOOSE.model('User', this);
   }
 }
 module.exports = User;
